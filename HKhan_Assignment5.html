@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 align="center"> Assignment 5 </h1>
+<h2 align="center"> Habib Khan </h2>
+
+<p style="font-weight:bold;"> Reverse the words by entering: </p> 
+
+<!-- This is a function for Question 1; enter any word and it will reverse the words -->
+<script>
+var str_rev = prompt("Enter any word");
+document.write(str_rev + " " +"---->" + " ");
+var str_list = str_rev.split("");
+var rev_list = str_list.reverse();
+var rev_str = rev_list.join("");
+document.write(rev_str);
+</script>
+
+
+
+
+<! -- This part is for Question 2. In this part I am going to create a function where it takes an input and prints table
+the first 20 multiplies of input -->
+
+<p style="font-weight:bold;"> Multipliers of entered input </p>
+
+<input type = "button" value = "Create multipliers" onclick= "multiplier()">
+<script>
+var num1 = prompt("Enter a number to create multiplier", "2");
+var num1 = parseInt(num1);
+
+function multiplier() {
+  var body = document.getElementsByTagName("body")[0];
+  var tbl = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+
+ 
+  var k = 1
+  for (var i = 0; i < 5; i++) {
+    var row = document.createElement("tr");
+
+    for (var j = 0; j < 4; j++) {
+
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode(num1*k);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
+      k++
+    }
+
+    tblBody.appendChild(row);
+  }
+
+
+
+  tbl.appendChild(tblBody);
+
+  body.appendChild(tbl);
+
+  tbl.setAttribute("border", "2");
+
+}
+
+
+
+</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
